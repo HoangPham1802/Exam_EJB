@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid row mt-2">
+    <table class="table table-striped">
+        <thead>
+            <tr class="row">
+                <td class="col-md-2">Name</td>
+                <td class="col-md-2">Address</td>
+                <td class="col-md-2">Date of birth</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="row" th:each="candidate : ${pagination.getContent()}">
+                <td class="col-md-2" th:text="${candidate.name}"></td>
+                <td class="col-md-2" th:text="${candidate.addr}"></td>
+                <td class="col-md-2" th:text="${candidate.dob}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
